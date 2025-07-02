@@ -192,78 +192,119 @@ section{
 
 
 
-/*projects section*/
-.projects{
-    position: relative;
-}
+#projects {
+            height: auto;
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+        
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            width: 100%;
+        }
 
-.card-1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    gap: 60px;
-    border: #b6b6b6 1px solid;
-    padding: 15px 15px;
-    border-radius: 16px;
-    top: 30px;
-    transform:scale(0.85);
-}
+        .project-card {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 16px;
+            background-color: rgba(255, 255, 255, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-.card-2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    gap: 60px;
-    border: #b6b6b6 1px solid;
-    padding: 15px 15px;
-    border-radius: 16px;
-    top: 450px;
-    transform:scale(0.85);
-}
+        .project-card .card-img {
+            width: 55%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
 
-.card-img-1{
-    width:600px;
-    height: 400px;
-    border-radius: 10px;
-}
+        .project-card .card-text {
+            width: 45%;
+            text-align: left;
+        }
+        
+        .card-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .card-text h4 {
+            font-family: 'Astralaga', sans-serif;
+            font-weight: 400;
+            letter-spacing: normal;
+            color: #888;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .card-text a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .card-text a::after {
+            content: '→';
+            margin-left: 8px;
+            transition: margin-left 0.3s ease;
+        }
+        
+        .card-text a:hover::after {
+            margin-left: 15px;
+        }
 
-.card-img-2{
-    width:600px;
-    height: 400px;
-    border-radius: 10px;
-}
+        .card-text p {
+            text-align: left;
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+@media screen and (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
 
+            .main-hero-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            /* Stack project cards on mobile */
+            .project-card {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            /* For the second card, reverse the column so image is on top */
+            .project-card.reverse {
+                flex-direction: column-reverse;
+            }
 
-.card-text a{
-    text-decoration: none;
-    color: #ffffff;
-}
-
-
-.card-text h3{
-    text-align: left;
-    font-family: "Astralaga", sans-serif;
-}
-
-.card-text h4{
-    text-align: left;
-    padding: 10px 0;
-    font-family: "SF-Compact-Display", sans-serif;
-    font-weight: 100;
-    letter-spacing: normal;
-    color: #747474;
-}
-
-
-.card-text p{
-    text-align: left;
-    color: #cccccc;
-    font-size: 0.9rem;
-    font-family: "SF-Compact-Display", sans-serif;
-    font-weight: 100;
-}
+            .project-card .card-img,
+            .project-card .card-text {
+                width: 100%;
+            }
+            
+            .card-text {
+                text-align: center;
+            }
+            
+            .card-text p, .card-text h3, .card-text h4 {
+                text-align: center;
+            }}
 
 .about{
     display: flex;
