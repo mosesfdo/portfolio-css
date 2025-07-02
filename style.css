@@ -49,7 +49,7 @@ html {
 }
 
 ::selection {
-    background-color: #ffb7b7;
+    background-color: #fcfcfc;
     color: #000;
 }
 
@@ -59,7 +59,9 @@ body {
     color: #cccccc;
     letter-spacing: 0.5px;
     padding-top: 0; /* Removed extra padding */
+  overflow-x: hidden;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Astralaga', sans-serif;
@@ -69,6 +71,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* NavBar Styles */
+
+.top-logo {
+    cursor: pointer;
+    text-decoration: none;
+}
 
 .top-logo h1 {
     font-family: 'MediaSans', sans-serif;
@@ -124,6 +131,11 @@ nav ul a {
     transform: none; /* Ensure no zoom effect */
 }
 
+nav ul a:hover {
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
 
 /* Updated social icons to float in a column layout */
 .social-icons {
@@ -135,11 +147,17 @@ nav ul a {
     left: 20px; /* Positioned at the left */
 }
 
+.social-icons a {
+}
+
 .social-icons img {
     width: 24px;
     height: 24px;
     transition: transform 0.3s ease;
-    
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
 }
 
 /* Home*/
@@ -150,6 +168,30 @@ section{
     align-items: center;
     justify-content: center;
     width: 100%;       /* or any unit like px, em, rem, %, vw */
-  height: 100vh;      /* 100% of the viewport height */
+    height: 100vh;      /* 100% of the viewport height */
     text-align: center;
 }
+
+.wrapper{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-hero-text h2{
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: 200;
+}
+
+.main-hero-text p{
+    font-size: 1rem;
+    color: #cccccc;
+    margin-top: 10px;
+    opacity: 0.5;
+}
+
+
+
