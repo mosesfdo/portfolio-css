@@ -245,6 +245,7 @@ section{
             color: #888;
             margin-top: 20px;
             margin-bottom: 5px;
+            text-align: center;
         }
         
         .card-text a {
@@ -322,6 +323,9 @@ section{
     width: 400px;
     border-radius: 50%;
     transform: translateY(-10%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about h2{
@@ -332,19 +336,20 @@ section{
     font-weight: 200;
 }
 .verse-mark{
-    position: absolute;
-    right: 0;
-    bottom: 280px;
+    position: static;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    color: #bbbbbb;
 }
 
 .about p{
     font-size: 1rem;
     line-height: 1.2;
-    margin-bottom: 10px;
     color: #9b9b9b;
     font-weight: 100;
     font-family: "SF-Compact-Display", sans-serif;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 /* Updated CSS for the contact section */
@@ -378,33 +383,9 @@ section{
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.contact input, .contact textarea {
-    width: 95%;
-    padding: 15px;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    font-family: "SF-Compact-Display", sans-serif;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
-    transition: border-color 0.3s ease;
-}
-
-.contact input:focus, .contact textarea:focus {
-    outline: none;
-}
-
-.contact button {
-    padding: 15px 30px;
+.email-button {
+    text-decoration: none;
+    padding: 10px 30px;
     border: none;
     border-radius: 5px;
     background-color: #e0e0e0;
@@ -416,8 +397,47 @@ section{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.contact button:hover {
+.email-button:hover {
     background-color: #ffffff;
     transform: scale(1.05);
+}
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
+
+/* Ensure all sections and containers fit within the viewport */
+section, .projects-container, .project-card, .contact, .about {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fix potential overflow caused by images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Adjust padding and margins for smaller screens */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 0 10px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .contact form {
+        padding: 10px;
+    }
+
+    .verse-mark {
+        margin-top: 15px;
+        font-size: 0.95rem;
+        margin-left: 0;
+    }
 }
 
