@@ -439,5 +439,9 @@ img {
         font-size: 0.95rem;
         margin-left: 0;
     }
+    .about-img{
+        height: 250px;
+        width: 250px;
+    }
 }
 
