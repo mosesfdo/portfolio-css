@@ -59,7 +59,8 @@ body {
     color: #cccccc;
     letter-spacing: 0.5px;
     padding-top: 0; /* Removed extra padding */
-  overflow-x: hidden;
+    overflow-x: hidden;
+    cursor: url('Assets/cursor.png'), auto; /* Custom cursor */
 }
 
 
@@ -76,6 +77,72 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     text-decoration: none;
 }
+
+@keyframes appearfromabove {
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes appearfrombelow {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes appearfromleft {
+    from {
+        transform: translateX(-1000px);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes appearfromright {
+    from {
+        transform: translateX(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+
+
+
+
+@keyframes blurAppear {
+    from {
+        filter: blur(5px);
+        opacity: 0;
+    }
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
+    
+}
+
+
 
 .top-logo h1 {
     font-family: 'MediaSans', sans-serif;
@@ -108,6 +175,7 @@ nav {
     z-index: 1000;
     box-sizing: border-box;
     transform: none; /* Ensure no zoom effect */
+    animation: appearfromabove 1.5s ease-in-out;
 }
 
 nav ul {
@@ -123,17 +191,22 @@ nav ul li {
 
 nav ul a {
     text-decoration: none;
-    color: #b6b6b6;
+    color: #858484;
     font-family: 'SF-Compact-Display', sans-serif;
     font-weight: 100;
     font-size: 14px; /* Fixed font size */
     letter-spacing: 0px;
     transform: none; /* Ensure no zoom effect */
+    font-size: 1rem
 }
 
 nav ul a:hover {
     color: #ffffff;
     transition: color 0.3s ease-in-out;
+}
+
+nav ul li a.active {
+    color: #ffffff;
 }
 
 
@@ -145,6 +218,7 @@ nav ul a:hover {
     position: fixed;
     bottom: 20px; /* Positioned at the bottom */
     left: 20px; /* Positioned at the left */
+    animation: appearfrombelow 1.5s ease-in-out;
 }
 
 .social-icons img {
@@ -156,6 +230,9 @@ nav ul a:hover {
 .social-icons img:hover {
     transform: scale(1.2); /* Slightly enlarge on hover */
 }
+
+
+
 
 /* Home*/
 
@@ -175,6 +252,10 @@ section{
     padding: 0 20px;
 }
 
+.main-hero-text{
+    animation:blurAppear 2s ease-in-out;
+}
+
 .main-hero-text h2{
     font-size: 2.5rem;
     line-height: 1.2;
@@ -188,7 +269,10 @@ section{
     color: #cccccc;
     margin-top: 10px;
     opacity: 0.5;
+    
 }
+
+
 
 
 
@@ -214,7 +298,15 @@ section{
             border-radius: 16px;
             background-color: rgba(255, 255, 255, 0.02);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: appearfromleft;
+            animation-timeline: view(80% auto);
         }
+
+    
+
+
+
+
         
         .project-card:hover {
             transform: translateY(-5px);
@@ -334,6 +426,8 @@ section{
     margin-bottom: 10px;
     color: #ffffff;
     font-weight: 200;
+    animation: appearonscroll;
+    animation-timeline: view(80% auto);
 }
 .verse-mark{
     position: static;
